@@ -20,4 +20,11 @@ servidor.get('/calculadora/multiplicar/:n1/:n2', (req, resp) => {
     resp.send(`O resultado é ` + m)
 })
 
+servidor.get('/calculadora/subtracao', (req, resp) => {
+    let n1 = Number(req.query.n1)
+    let n2 = Number(req.query.n2)
+    let subtracao = n1 - n2
+    resp.send(`O resultado da subtração é ${subtracao}`)
+})
+
 servidor.listen(5050, () => console.log('a API deu certo'));
