@@ -1,0 +1,17 @@
+import express from 'express'
+
+const servidor = express()
+
+servidor.get('/servidor/acai/:p/:m/:g', (req, resp) =>{
+    let p= Number(req.params.p)
+    let m = Number(req.params.m)
+    let g = Number(req.params.g)
+
+    let valor = (p*13.5)+ (m*15)+(g*17.5)
+
+    resp.send({
+        mensagem:valor
+    })
+})
+
+servidor.listen(5050, () => console.log('a API deu certo'));
